@@ -8,16 +8,16 @@ import events as e
 
 
 # This is only an example!
-from agent_code.MR_Bombastic.feature_extraction import RLFeatureExtraction
+from agent_code.bombi_agent.feature_extraction import RLFeatureExtraction
 
 ## TRAINING PARAMETERS
 
 # Allow to check various combinations of training methods in parallel
 # through multiple agent processes by taking values from the
 # environment.
-t_policy = os.environ.get('MRBOMBASTIC_POLICY')
-t_policy_eps = os.environ.get('MRBOMBASTIC_POLICY_EPS')
-t_weight_begin = os.environ.get('MRBOMBASTIC_WEIGHTS_BEGIN')
+t_policy = os.environ.get('BOMBI_POLICY')
+t_policy_eps = os.environ.get('BOMBI_POLICY_EPS')
+t_weight_begin = os.environ.get('BOMBI_WEIGHTS_BEGIN')
 
 # Default values for training.
 if t_policy == None: t_policy = 'greedy'
@@ -31,7 +31,7 @@ if t_policy == "greedy":
 
 # Save weights to file
 print("TRAINING ID:", t_training_id)
-weights_file = "anshu_{}_weights.npy".format(t_training_id)
+weights_file = "nida_{}_weights.npy".format(t_training_id)
 
 
 

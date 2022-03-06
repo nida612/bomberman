@@ -1,7 +1,7 @@
 import numpy as np
 import copy
 
-from agent_code.MR_Bombastic.arena import *
+from agent_code.bombi_agent.arena import *
 
 
 class RLFeatureExtraction:

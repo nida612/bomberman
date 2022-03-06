@@ -1,16 +1,16 @@
 import os  # required for training
 import random
 
-from agent_code.MR_Bombastic.feature_extraction import *
+from agent_code.bombi_agent.feature_extraction import *
 
 ## TRAINING PARAMETERS
 
 # Allow to check various combinations of training methods in parallel
 # through multiple agent processes by taking values from the
 # environment.
-t_policy = os.environ.get('MRBOMBASTIC_POLICY')
-t_policy_eps = os.environ.get('MRBOMBASTIC_POLICY_EPS')
-t_weight_begin = os.environ.get('MRBOMBASTIC_WEIGHTS_BEGIN')
+t_policy = os.environ.get('BOMBI_POLICY')
+t_policy_eps = os.environ.get('BOMBI_POLICY_EPS')
+t_weight_begin = os.environ.get('BOMBI_WEIGHTS_BEGIN')
 
 # Default values for training.
 if t_policy == None: t_policy = 'greedy'
@@ -26,7 +26,7 @@ if t_policy == "greedy":
 print("TRAINING ID:", t_training_id)
 
 
-# weights_file = "./agent_code/MR_Bombastic/models/{}_weights.npy".format(t_training_id)
+# weights_file = "./agent_code/nida_agent/models/{}_weights.npy".format(t_training_id)
 
 ## REWARDS AND POLICY
 
@@ -112,13 +112,13 @@ def setup(self):
     #     self.weights = initialize_weights(t_weight_begin)
     #     print("INITIALIZED WEIGHTS", self.weights)
 
-    if self.train or not os.path.isfile("greedy_trained_weights.npy"):
+    if self.train or not os.path.isfile("nida_greedy_trained_weights.npy"):
         self.logger.info("Setting up model from scratch.")
         self.weights = initialize_weights(t_weight_begin)
         print("INITIALIZED WEIGHTS", self.weights)
     else:
         self.logger.info("Loading model from saved state.")
-        self.weights = np.load("anshu_greedy_trained_weights.npy")
+        self.weights = np.load("nida_greedy_trained_weights.npy")
         print("LOADED WEIGHTS", self.weights)
 
     # List for storing y values (matplotlib)
